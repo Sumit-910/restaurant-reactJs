@@ -1,0 +1,24 @@
+import React from "react";
+
+const navbar = (props) => {
+    const { filterItem, menuList } = props;
+  return (
+    <>
+      <nav className="navbar">
+        <div className="btn-group">
+          {menuList?.map((curElem) => {
+            return (
+              <button
+                className="btn-group__item" key={curElem}
+                onClick={() => filterItem(curElem)}>
+                {curElem}
+              </button>
+            );
+          })}
+        </div>
+      </nav>
+    </>
+  );
+};
+
+export default navbar;
